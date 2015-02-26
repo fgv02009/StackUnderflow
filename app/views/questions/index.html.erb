@@ -9,13 +9,22 @@
   </tr>
   <% @questions.each do |question| %>
     <tr>
+<<<<<<< HEAD
       <td ><%=question.user.username %></td>
       <td ><%=link_to "#{question.title}", question_path(question) %></td>
+=======
+      <td ><%=question.creator %></td>
+      <td ><%=link_to "question", show_question_path(question) %></td>
+>>>>>>> b5f0d0bf644bf5391ce9bcace44d16b59d8e765f
     </tr>
   <%end %>
 </table>
 <br>
+<<<<<<< HEAD
 <% if true %> <!-- change back to current user -->
+=======
+<% if current_user %>
+>>>>>>> b5f0d0bf644bf5391ce9bcace44d16b59d8e765f
   <%=link_to "create", new_question_path, remote: true, class: "btn btn-success" %>
 <% end %>
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   root 'questions#index'
 
   get "/signup" => "users#new"
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
   delete "/logout"  => "sessions#destroy"
 
   resources :users
+=======
+
+
+>>>>>>> b5f0d0bf644bf5391ce9bcace44d16b59d8e765f
   resources :questions
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
