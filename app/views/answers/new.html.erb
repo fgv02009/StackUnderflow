@@ -1,0 +1,6 @@
+<%=form_for @answer, remote: true do |f| %>
+  <br>
+  <%=f.text_area :content, placeholder: "answer"%>
+  <br>
+  <%=submit_tag "Give an Answer", class: "btn btn-success" %>
+<%end%>
