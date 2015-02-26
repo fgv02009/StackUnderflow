@@ -12,7 +12,7 @@ class QuestionsControllerController < ApplicationController
   end
 
   def create
-    @question = Question.new(params[:question])
+    @question = Question.new(question_params[:question])
     
     respond_to do |format|
       if @question.save
@@ -26,23 +26,22 @@ class QuestionsControllerController < ApplicationController
   end
 
   def show
-    @question = Question.find(question_params[:id])
-    @answers = @question.answers
+    @question = Question.find(params[:id])
     #will render Question show form
   end
 
   def edit
-    @question = Question.find(question_params[:id])
+    @question = Question.find(params[:id])
     
   end
 
   def update
-    @question = Question.find(question_params[:id])
+    @question = Question.find(params[:id])
     @question.update(question_params)
   end
 
   def destroy
-    @question = Question.find(question_params[:id])
+    @question = Question.find(params[:id])
     @question.destroy
     render "index"
   end
@@ -50,5 +49,5 @@ class QuestionsControllerController < ApplicationController
 
   def question_params
     #get attributed from db
-    params.require(:question).permit(:content, :id)
+    params.require(:question).permit(:content)
 end
