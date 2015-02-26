@@ -41,7 +41,7 @@ describe User do
 
     it "is invalid when passwords do not match" do
       user.password = "password"
-      user.password_confirmation = "WRONG"
+      user.password_confirmation = "notright"
       user.valid?
       expect(user.errors[:password_confirmation]).to_not be_empty
     end
