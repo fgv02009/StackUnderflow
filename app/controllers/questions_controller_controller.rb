@@ -1,8 +1,6 @@
 class QuestionsControllerController < ApplicationController
 
   respond_to :html, :js
-
-  
   def index
     #will render index form and send 10 most recently created pics to views
   @questions = Question.order(created_at: :desc).limit(10)
@@ -25,6 +23,7 @@ class QuestionsControllerController < ApplicationController
       render 'new'
       #want to ajax`
     end
+
   end
 
   def show
