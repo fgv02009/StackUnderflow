@@ -1,0 +1,25 @@
+
+<div class = "container" style = "margin-bottom: 30px">
+<h1 style = "text-align: center">Questions</h1>
+
+<table class = "table table-striped table-hover questions">
+  <tr class = "danger">
+    <th>Author </th>
+    <th>Question</th>
+  </tr>
+  <% @questions.each do |question| %>
+    <tr>
+      <td ><%=question.creator %></td>
+      <td ><%=link_to "question", show_question_path(question) %></td>
+    </tr>
+  <%end %>
+</table>
+<br>
+<% if current_user %>
+  <%=link_to "create", new_question_path, remote: true, class: "btn btn-success" %>
+<% end %>
+
+<div id = "question-form" style = "display:none;">
+
+  </div>
+</div>
