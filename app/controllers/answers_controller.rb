@@ -1,4 +1,4 @@
-class AnswersControllerController < ApplicationController
+class AnswersController < ApplicationController
 
   def index
     #will render index form and send 10 most recently created pics to views
@@ -15,7 +15,7 @@ class AnswersControllerController < ApplicationController
     
     respond_to do |format|
       if @answer.save
-      format.html {redirect_to answers_path}
+      
       format.js {render action: ''}
       #want to ajax
       else

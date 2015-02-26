@@ -1,4 +1,4 @@
-class QuestionsControllerController < ApplicationController
+class QuestionsController < ApplicationController
   respond_to :html, :js
   def index
     #will render index form and send 10 most recently created pics to views
@@ -49,4 +49,5 @@ class QuestionsControllerController < ApplicationController
   def question_params
     #get attributed from db
     params.require(:question).permit(:content)
+  end
 end
