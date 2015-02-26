@@ -1,5 +1,6 @@
 class AnswersControllerController < ApplicationController
 
+
   def index
     #will render index form and send 10 most recently created pics to views
     @answers = Answer.order(created_at: :desc).limit(10)
@@ -51,6 +52,7 @@ class AnswersControllerController < ApplicationController
     #get attributed from db
     params.require(:answer).permit(:content, :id)
 end
+
 
 
 

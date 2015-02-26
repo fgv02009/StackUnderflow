@@ -1,5 +1,8 @@
 class QuestionsControllerController < ApplicationController
+
   respond_to :html, :js
+
+  
   def index
     #will render index form and send 10 most recently created pics to views
   @questions = Question.order(created_at: :desc).limit(10)
@@ -26,10 +29,20 @@ class QuestionsControllerController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    #will render Question show form
+    
+    respond_to do |format|
+      if @question.save
+      format.html {redirect_to questions_path}
+      format.js {render action: ''}
+      #want to ajax
+      else
+        render 'new'
+        #want to ajax
+      end
   end
 
   def edit
+
     @question = Question.find(params[:id])
     
   end

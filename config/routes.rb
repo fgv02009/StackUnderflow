@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'questions#index'
+
   get "/signup" => "users#new"
   get "/login"   => "sessions#new"
   post "/login"  => "sessions#create"
@@ -6,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-  root 'questions#index'
   resources :questions
 
   # The priority is based upon order of creation: first created -> highest priority.
