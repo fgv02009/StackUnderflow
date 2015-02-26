@@ -4,11 +4,12 @@ class SessionsController < ApplicationController
   end
 
   def create #post login
-    @user = User.find_by_email(params[:email]).try(:authenticate, params[:password])
+    @user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
     if @user
       session[:user_id] = @user.id
       redirect_to root_path
     else
+      @user = User.new
       render "new"
     end
   end
