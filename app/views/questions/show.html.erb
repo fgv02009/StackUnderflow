@@ -1,4 +1,4 @@
 <div class ="container">
 <h1><%=@question.title%></h1>
-<p><%=@question.content%></p>
+<p><%= markdown(@question.content) %></p>
 </div>
