@@ -4,11 +4,13 @@
   <tr class = "danger">
     <th>Author </th>
     <th>Question</th>
+    <th>Votes</th>
   </tr>
   <% @questions.each do |question| %>
     <tr>
       <td ><%=question.user.username %></td>
       <td ><%=link_to "#{question.title}", question_path(question) %></td>
+      <td><a href="#"><i class="fa fa-thumbs-down"> &nbsp; &nbsp; </i></a><%= question.votes.count %>&nbsp; &nbsp; &nbsp;<a href="#"><i class="fa fa-thumbs-up"></i></a> </td>
     </tr>
   <%end %>
 </table>
