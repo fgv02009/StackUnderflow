@@ -24,6 +24,7 @@
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
           <li><a href="#">Hi, <%= current_user.username.titleize %>!</a></li>
+         <!--  <li><a href="#">Ask a Question</a></li> DO LATER-->
           <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
         <% else %>
           <li class="active"><%= link_to "Sign Up", signup_path %></li>

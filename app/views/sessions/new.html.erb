@@ -1,5 +1,13 @@
-<%= form_for @user, url: login_path do |f| %>
-  <p><%= f.email_field :email, placeholder: "email" %></p>
-  <p><%= f.password_field :password, placeholder: "password" %></p>
-  <p><%= f.submit value: 'Login'%></p>
+
+<%= form_for @user, :html => { url: login_path, class: "form-horizontal" } do |f| %>
+<fieldset>
+<legend>Login</legend>
+  <div class="col-lg-2">
+  <%= f.label :email, class: "col-lg-2 control-label" %>
+  <%= f.email_field :email, placeholder: "email", class: "form-control" %>
+  <%= f.label :password, class: "col-lg-2 control-label" %>
+  <%= f.password_field :password, placeholder: "password", class: "form-control" %>
+  <%= f.submit value: 'Login', class: "btn btn-primary" %>
+</div>
+</fieldset>
 <% end %>
