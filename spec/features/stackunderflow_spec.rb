@@ -44,7 +44,7 @@ feature 'User visits website ' do
     expect(page).to have_content("10 Most Recent Questions")
   end
 
-  xscenario "can create a new question" do
+  xscenario "can create a new question", js: true do
     visit '/'
     click_link("Login")
     within(".new_user") do
