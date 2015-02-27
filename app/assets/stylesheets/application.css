@@ -14,3 +14,17 @@
  *= require_self
  *= require bootstrap.min
  */
+
+.login {
+  text-align: center;
+  margin: 0 37%;
+}
+
+.btn-primary {
+  margin: 0 80%;
+}
+
+.signup {
+  text-align: center;
+  margin: 0 32%;
+}
