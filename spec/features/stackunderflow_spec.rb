@@ -44,7 +44,7 @@ feature 'User visits website ' do
     expect(page).to have_content("10 Most Recent Questions")
   end
 
-  xscenario "can create a new question", js: true do
+  scenario "can create a new question", js: true do
     visit '/'
     click_link("Login")
     within(".new_user") do
@@ -52,12 +52,16 @@ feature 'User visits website ' do
       fill_in 'password', :with => user.password
       click_button("Login")
     end
+
     click_link("Ask a Question")
     within ("#new_question") do
       fill_in 'title', :with => 'New Fake Title'
-      fill_in 'question[content]', :with => 'New Fake Content'
+      fill_in 'content', :with => 'New Fake Content'
     end
-    click_button "commit"
-    expect("#table").to have_content('New Fake Content')
+
+    click_button ("Submit New Question")
+
+    # require 'pry'; binding.pry
+    expect(find('table')).to have_content('New Fake Title')
   end
 end
