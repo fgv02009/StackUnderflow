@@ -53,3 +53,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'simplecov'
 end
+
+# for showing special syntax on the content
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
