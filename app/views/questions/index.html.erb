@@ -5,7 +5,7 @@
 <%=render "questions_table", locals: {questions: @questions}%>
 
 <br>
-<% if true %> <!-- change back to current user -->
+<% if current_user %> <!-- change back to current user -->
   <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-success" %>
 <% end %>
 
