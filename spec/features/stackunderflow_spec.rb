@@ -25,8 +25,8 @@ feature 'User visits website ' do
     visit '/'
     click_link("Login")
     within(".new_user") do
-      fill_in 'email', :with => user.email
-      fill_in 'password', :with => user.password
+      fill_in 'Email', :with => user.email
+      fill_in 'Password', :with => user.password
       click_button("Login")
     end
 
@@ -37,8 +37,8 @@ feature 'User visits website ' do
     visit '/'
     click_link("Login")
     within(".new_user") do
-      fill_in 'email', :with => user.email
-      fill_in 'password', :with => user.password
+      fill_in 'Email', :with => user.email
+      fill_in 'Password', :with => user.password
       click_button("Login")
     end
     expect(page).to have_content("10 Most Recent Questions")
@@ -48,8 +48,8 @@ feature 'User visits website ' do
     visit '/'
     click_link("Login")
     within(".new_user") do
-      fill_in 'email', :with => user.email
-      fill_in 'password', :with => user.password
+      fill_in 'Email', :with => user.email
+      fill_in 'Password', :with => user.password
       click_button("Login")
     end
 
