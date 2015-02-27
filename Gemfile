@@ -43,11 +43,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'rails_12factor', group: :production
 
-gem 'faker'
 
 
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'pry'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
