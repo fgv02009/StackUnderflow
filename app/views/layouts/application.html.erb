@@ -24,8 +24,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
-          <li><a href="#">Hi, <%= current_user.username.capitalize %>!</a></li>
-          <li><a href="#">Ask a Question</a></li>
+          <li><a href="#">Hi, <%= current_user.username.titleize %>!</a></li>
           <li class="active"><%= link_to "Logout", logout_path, method: :delete %></li>
         <% else %>
           <li class="active"><%= link_to "Sign Up", signup_path %></li>

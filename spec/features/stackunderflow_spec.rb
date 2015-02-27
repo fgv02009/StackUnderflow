@@ -19,27 +19,45 @@ feature 'Visitor visits website' do
 end
 
 feature 'User visits website ' do
-  before(:all) do
+  given(:user)  {User.create!(username: "Bob Rajput", email: Faker::Internet.email, password: "123")}
+
+  scenario "can login" do
     visit '/'
-    click_link("login")
-    user = User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: "password")
-    #FILL IN FORM
-  end
-  xscenario "can login" do
+    click_link("Login")
+    within(".new_user") do
+      fill_in 'email', :with => user.email
+      fill_in 'password', :with => user.password
+      click_button("Login")
+    end
+
     expect(page).to have_content(user.username)
   end
   
   scenario "sees a list of 10 questions" do
+    visit '/'
+    click_link("Login")
+    within(".new_user") do
+      fill_in 'email', :with => user.email
+      fill_in 'password', :with => user.password
+      click_button("Login")
+    end
     expect(page).to have_content("10 Most Recent Questions")
   end
 
-  scenario "can create a new question" do
-    click_button("Ask a Question")
+  xscenario "can create a new question" do
+    visit '/'
+    click_link("Login")
+    within(".new_user") do
+      fill_in 'email', :with => user.email
+      fill_in 'password', :with => user.password
+      click_button("Login")
+    end
+    click_link("Ask a Question")
     within ("#new_question") do
       fill_in 'title', :with => 'New Fake Title'
-      fill_in 'content', :with => 'New Fake Content'
+      fill_in 'question[content]', :with => 'New Fake Content'
     end
-    click_button ("Submit New Question")
+    click_button "commit"
     expect("#table").to have_content('New Fake Content')
   end
 end

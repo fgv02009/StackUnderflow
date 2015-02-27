@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
+User.create!(username:"matthewwho", email:"matthewwho@me.com", password:"123")
+
 10.times do
   User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: "password")
 end
