@@ -21,6 +21,17 @@ end
 
 questions = Question.all
 
+10.times do
+  Vote.create(voteable: questions.sample, user: users.sample)
+end
+
+
 20.times do
   Answer.create!(content: Faker::Lorem.paragraph, user: users.sample, question: questions.sample)
+end
+
+answers = Answer.all
+
+10.times do 
+  Vote.create(voteable: answers.sample, user: users.sample)
 end
