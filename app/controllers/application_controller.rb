@@ -9,30 +9,24 @@ class ApplicationController < ActionController::Base
     @_user || User.find(session[:user_id]) if session[:user_id]
   end
 
-  def markdown(text)
-   render_options = {filter_html:     true,
-                     hard_wrap:       true, 
-                     link_attributes: { rel: 'nofollow' }
-                    }
-
-    renderer = Redcarpet::Render::HTML.new(render_options)
-
-    extensions = { autolink:           true,
-                   fenced_code_blocks: true,
-                   lax_spacing:        true,
-                   no_intra_emphasis:  true,
-                   strikethrough:      true,
-                   superscript:        true
-                 }
-
-  syntax_highlighter(Redcarpet::Markdown.new(renderer, extensions).render(text).html_safe)
+  class CodeRayify < Redcarpet::Render::HTML
+    def block_code(code, language)
+      CodeRay.scan(code, language).div
+    end
   end
 
-  def syntax_highlighter(html)
-    doc = Nokogiri::HTML(html)
-    doc.search("//pre[@lang]").each do |pre|
-      pre.replace Albino.colorize(pre.text.rstrip, pre[:lang])
-    end
-    doc.to_s
+  def markdown(text)
+    coderayified = CodeRayify.new(:filter_html => true, 
+      :hard_wrap => true)
+    options = {
+      :fenced_code_blocks => true,
+      :no_intra_emphasis => true,
+      :autolink => true,
+      :strikethrough => true,
+      :lax_html_blocks => true,
+      :superscript => true
+    }
+    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
+    markdown_to_html.render(text).html_safe
   end
 end

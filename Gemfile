@@ -56,5 +56,4 @@ end
 
 # for showing special syntax on the content
 gem 'redcarpet'
-gem 'albino'
-gem 'nokogiri'
+gem 'coderay'
