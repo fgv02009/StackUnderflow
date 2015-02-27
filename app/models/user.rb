@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
-  has_secure_password
-  has_many :answers
-  has_many :questions
+  authenticates_with_sorcery!
 
-  validates_presence_of :username, :email
-  validates_uniqueness_of :username, :email
+  validates :password, presence: true, length: { minimum: 3 }, confirmation: true
+  validates :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 end

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'devise'
+gem 'sorcery'
 gem 'factory_girl'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
