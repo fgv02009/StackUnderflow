@@ -1,9 +1,5 @@
-<%if @questions.errors.any?%>
-      <%@questions.errors.full_messages.each do |message|%>
-        <p><%=message%></p>
-      <%end%>
-    <%end%>
-  <%=form_for @questions, remote: true do |f| %>
+
+  <%=form_for @question, remote: true do |f| %>
       <br>
       <%= f.text_field :title, placeholder: "title" %>
       <br>
