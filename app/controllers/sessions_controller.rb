@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(params[:user][:email]).try(:authenticate, params[:user][:password])
     if @user
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to "/"
     else
       @user = User.new
       render "new"
@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy #logout
     session[:user_id] = nil
-    render "new"
+    redirect_to "/"
   end
 end

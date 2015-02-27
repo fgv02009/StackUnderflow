@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   def index
     #will render index form and send 10 most recently created pics to views
     @questions = Question.order(created_at: :desc).limit(10)
+    @user = User.new
   end
 
   def new
@@ -13,7 +14,7 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
-    @question.user = User.find(1)
+    @question.user = current_user
     @questions = Question.order(created_at: :desc).limit(10)
     
     render 'new' unless @question.save
