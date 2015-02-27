@@ -12,7 +12,9 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.new(question_params[:question])
+    @question = Question.new(question_params)
+    @question.user = User.find(1)
+    @questions = Question.order(created_at: :desc).limit(10)
     
     render 'new' unless @question.save
   end
@@ -44,6 +46,6 @@ class QuestionsController < ApplicationController
 
     def question_params
     #get attributed from db
-    params.require(:question).permit(:content)
+    params.require(:question).permit(:content, :title)
   end
 end

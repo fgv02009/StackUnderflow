@@ -1,0 +1,14 @@
+
+
+<table class = "table table-striped table-hover questions">
+  <tr class = "danger">
+    <th>Author </th>
+    <th>Question</th>
+  </tr>
+  <% @questions.each do |question| %>
+    <tr>
+      <td ><%=question.user.username %></td>
+      <td ><%=link_to "#{question.title}", question_path(question) %></td>
+    </tr>
+  <%end %>
+</table>

@@ -2,21 +2,11 @@
 <div class = "container" style = "margin-bottom: 30px">
 <h1 style = "text-align: center">Questions</h1>
 
-<table class = "table table-striped table-hover questions">
-  <tr class = "danger">
-    <th>Author </th>
-    <th>Question</th>
-  </tr>
-  <% @questions.each do |question| %>
-    <tr>
-      <td ><%=question.user.username %></td>
-      <td ><%=link_to "#{question.title}", question_path(question) %></td>
-    </tr>
-  <%end %>
-</table>
+<%=render "questions_table", locals: {questions: @questions}%>
+
 <br>
 <% if true %> <!-- change back to current user -->
-  <%=link_to "create", new_question_path, remote: true, class: "btn btn-success" %>
+  <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-success" %>
 <% end %>
 
 <div id = "question-form" style = "display:none;">
