@@ -1,0 +1,11 @@
+
+  <%=form_for @question, remote: true do |f| %>
+      <br>
+      <%= f.text_field :title, placeholder: "title" %>
+      <br>
+      <br>
+      <%= f.text_area :content, placeholder: "content"%>
+      <br>
+      <br>
+      <%=submit_tag "Submit New Question", class: "btn btn-success" %>
+  <% end %>

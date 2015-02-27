@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'questions#index'
+  get '/' => 'questions#index'
 
   get "/signup" => "users#new"
   get "/login"   => "sessions#new"
