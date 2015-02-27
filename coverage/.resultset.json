@@ -1,6 +1,47 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/answer.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/question.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/vote.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/apprentice/Desktop/week1/StackUnderflow/app/controllers/questions_controller.rb": [
         1,
         1,
@@ -69,24 +110,6 @@
         null,
         null
       ],
-      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/question.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
-      ],
-      "/Users/apprentice/Desktop/week1/StackUnderflow/app/models/user.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null
-      ],
       "/Users/apprentice/Desktop/week1/StackUnderflow/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -111,6 +134,6 @@
         null
       ]
     },
-    "timestamp": 1425055336
+    "timestamp": 1425066967
   }
 }
