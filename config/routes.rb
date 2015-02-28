@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   resources :questions
 
+  get '/create/question/vote' => "votes#create_question"
+  get '/create/answer/vote' => "votes#create_answer"
+  get '/destroy/question/vote' => "votes#destroy_question"
+  get '/destroy/answer/vote' => "votes#destroy_answer"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -4,11 +4,26 @@
   <tr class = "danger">
     <th>Author </th>
     <th>Question</th>
+    <th>Votes</th>
   </tr>
   <% @questions.each do |question| %>
-    <tr>
+    <tr id = "<%=question.id%>">
       <td ><%=question.user.username %></td>
       <td ><%=link_to "#{question.title}", question_path(question) %></td>
+      
+      <td><%= link_to destroy_question_vote_path(question) do %>
+            <i class ="fa fa-thumbs-down"></i>
+          <% end %>
+          
+        &nbsp; &nbsp; &nbsp;<%=question.votes.count%>&nbsp; &nbsp; &nbsp;
+        <%= link_to create_question_vote_path(question) do %>
+            <i class="fa fa-thumbs-up"></i>
+          <%end%>
+      </td>
+ 
+
     </tr>
   <%end %>
 </table>
+
+
