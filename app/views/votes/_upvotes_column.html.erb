@@ -1,0 +1,12 @@
+
+<tr id = "<%=question.id%>">
+      <td ><%=question.user.username %></td>
+      <td ><%=link_to "#{question.title}", question_path(question) %></td>
+      
+      <td>
+        <%=question.votes.count%>&nbsp; &nbsp; &nbsp;
+        <%= link_to destroy_question_vote_path(question_id: question.id), remote: true do %>
+              <i class ="fa fa-thumbs-down"></i>
+        <% end %>  
+      </td>
+    </tr>
