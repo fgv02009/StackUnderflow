@@ -46,7 +46,7 @@ textarea {
 
 #ask-question-btn {
   position: fixed;
-  top: 2px;
+  top: 6px;
   margin-left: 46%;
 }
 
@@ -63,4 +63,18 @@ textarea {
   border-radius: 5px;
   border: solid #bdbdbd 2px;
   background-color: #FFF;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.text-info {
+  position: absolute;
+  margin-bottom: 0px;
+  text-align: right;
 }

@@ -1,10 +1,17 @@
 <div class ="container">
-<h1><%=@question.title%></h1>
-<div class = "questioncontent"><%= markdown(@question.content) %></div>
+<div class = "jumbotron">
+  <h1 class = "center"><%=@question.title%></h1>
+  <br>
+  <p class = "left"><%= markdown(@question.content) %></p>
+  <p class = "text-info"><small>Author: <%=@question.user.username%></small></p>
+</div>
+
 <div class = "answers">
   <% @question.answers.each do |answer| %>
-    <div class = "answer"><%= answer.content%></div>
-    <br>
+   <%= render(partial: '/answers/answerdiv', locals: {answer: answer}) %>
+
+    <hr>
+
   <% end %>
 </div>
   <%if current_user%> 
