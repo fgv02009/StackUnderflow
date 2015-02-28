@@ -1,5 +1,12 @@
 require 'rails_helper'
 
-RSpec.describe Vote, :type => :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Vote do
+  let(:vote) {Vote.new}
+
+  describe 'validations' do
+    it "is invalid when there is no voteable (question or answer)" do
+      vote.valid?
+      expect(vote.errors[:voteable]).to_not be_empty
+    end
+  end
 end
