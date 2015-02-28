@@ -4,12 +4,4 @@
   <%=render "questions_table", locals: {questions: @questions}%>
 
   <br>
-  <% if current_user %>
-  <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-success" %>
-  <% end %>
-
-  <div id = "question-form" style = "display:none;">
-    hello
-  </div>
-
 </div>
