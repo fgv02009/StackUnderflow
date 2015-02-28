@@ -1,15 +1,15 @@
-
 <div class = "container" style = "margin-bottom: 30px">
-<h1 style = "text-align: center">10 Most Recent Questions</h1>
+  <h1 style = "text-align: center">10 Most Recent Questions</h1>
 
-<%=render "questions_table", locals: {questions: @questions}%>
+  <%=render "questions_table", locals: {questions: @questions}%>
 
-<br>
-<% if current_user %> <!-- change back to current user -->
+  <br>
+  <% if current_user %>
   <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-success" %>
-<% end %>
+  <% end %>
 
-<div id = "question-form" style = "display:none;">
-
+  <div id = "question-form" style = "display:none;">
+    hello
   </div>
+
 </div>
