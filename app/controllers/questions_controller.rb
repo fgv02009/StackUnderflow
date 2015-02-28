@@ -21,10 +21,8 @@ class QuestionsController < ApplicationController
       
       render 'new' unless @question.save
 
-    else
+    elsif preview?
       @content = markdown(params[:question][:content]).gsub("\n","<br>")
-      p "in the create  "
-      # binding.pry
       render :preview
     end
   end
@@ -52,12 +50,6 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @question.destroy
     render "index"
-  end
-
-  # AJAX call for showing a preview markdown
-  def preview
-    puts "IN THE PREVIEW"
-    # {markdown: markdown(params[:previewContent])}.to_json
   end
 
   def submit_new_question?

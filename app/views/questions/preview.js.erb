@@ -1,13 +1,2 @@
-// var previewContent = $("textarea").val();
-
-// var request = $.ajax({
-//   url: "/preview",
-//   type: "post",
-//   data: { previewContent: previewContent }
-// });
-
-// request.done(function(response){
-//   // debugger
   $('#preview-container').show();
   $('#preview-container').append('<%= raw(@content) %>');
-// });
