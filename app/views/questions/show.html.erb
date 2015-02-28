@@ -1,4 +1,17 @@
 <div class ="container">
 <h1><%=@question.title%></h1>
-<p><%= markdown(@question.content) %></p>
+<div class = "questioncontent"><%= markdown(@question.content) %></div>
+<div class = "answers">
+  <% @question.answers.each do |answer| %>
+    <div class = "answer"><%= answer.content%></div>
+    <br>
+  <% end %>
 </div>
+  <%if current_user%> 
+     <%=link_to "Answer Question", new_answer_path(question_id: @question.id), remote: true, class: "btn btn-success answerbutton" %>
+  <% end %>
+  <div id = "newanswer"></div>
+</div>
+
+ 
+ 

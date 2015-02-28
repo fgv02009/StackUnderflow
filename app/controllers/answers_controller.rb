@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-
+  respond_to :html, :js
 
   def index
     #will render index form and send 10 most recently created pics to views
@@ -8,21 +8,16 @@ class AnswersController < ApplicationController
 
   def new
     #will render new form
-    @answer = Answer.new
+    @question = Question.find(params[:question_id])
+    @answer = Answer.new(question: @question)
   end
 
   def create
-    @answer = Answer.new(params[:answer])
-    
-    respond_to do |format|
-      if @answer.save
-      
-      format.js {render action: ''}
-      #want to ajax
-      else
-        render 'new'
-        #want to ajax
-      end
+    puts "Params IN ANSWER: #{params}"
+    @answer = Answer.new(answer_params)
+    @answer.user = current_user
+    # @answer.question = Question.find(params[:question_id])
+    render 'new' unless @answer.save
   end
 
   def show
@@ -50,8 +45,8 @@ class AnswersController < ApplicationController
 
   def answer_params
     #get attributed from db
-    params.require(:answer).permit(:content, :id)
-end
+    params.require(:answer).permit(:content, :question_id)
+  end
 
 
 
