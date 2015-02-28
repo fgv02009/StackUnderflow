@@ -1,0 +1,11 @@
+<% if current_user%>
+  <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-lg btn-success", id: "ask-question-btn" %>
+<% else %>
+  <%=link_to "Join Our Cult", signup_path, class: "btn btn-lg btn-info", id: "ask-question-btn" %>
+<% end %>
+
+
+<div id="ask-question-container">
+  <div id = "question-form" style = "display:none;">
+  </div>
+</div>

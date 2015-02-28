@@ -14,7 +14,9 @@
  *= require_self
  *= require bootstrap.min
  */
-
+body {
+  margin: 0;
+}
 .login {
   text-align: center;
   margin: 0 37%;
@@ -40,4 +42,25 @@
 textarea {
   height: 100px ;
   width: 400px;
+}
+
+#ask-question-btn {
+  position: fixed;
+  top: 2px;
+  margin-left: 46%;
+}
+
+#ask-question-container {
+  position: absolute;
+  width: 100%;
+}
+
+#question-form {
+  margin-right: auto;
+  margin-left: auto;
+  width: 440px;
+  padding: 5px 20px 15px 20px;
+  border-radius: 5px;
+  border: solid #bdbdbd 2px;
+  background-color: #FFF;
 }
