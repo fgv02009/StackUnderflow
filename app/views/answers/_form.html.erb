@@ -1,0 +1,9 @@
+
+  <%=form_for @answer, remote: true do |f| %>
+      <%= f.hidden_field :question_id, value: @question.id %>
+      <br>
+      <%= f.text_area :content, placeholder: "Type your answer here."%>
+      <br>
+      <br>
+      <%=submit_tag "Submit New Answer", class: "btn btn-success" %>
+  <% end %>

@@ -1,0 +1,3 @@
+$("#newanswer").remove();
+$(".answers" ).append("<%= j(render(partial: 'answerdiv', locals: {question: @question})) %>")
+$(".answerbutton").remove();
