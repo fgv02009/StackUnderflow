@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   respond_to :html, :js
 
+
   def index
     #will render index form and send 10 most recently created pics to views
     @answers = Answer.order(created_at: :desc).limit(10)

@@ -29,3 +29,15 @@
   margin: 0 32%;
 }
  
+#preview-container{
+  display: none;
+}
+
+#question_title{
+  width: 400px;
+}
+
+textarea {
+  height: 100px ;
+  width: 400px;
+}
