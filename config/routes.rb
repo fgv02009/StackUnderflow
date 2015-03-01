@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  get '/' => 'questions#index'
+  get '/' => 'questions#index', as: :index
   get '/show_form' => 'questions#show_form'
   get '/discard_form' => 'questions#discard_form'
+  get '/show_all_questions' => 'questions#show_all_questions'
 
   get "/signup" => "users#new"
   get "/login"   => "sessions#new"
