@@ -14,11 +14,21 @@ feature 'Visitor visits website' do
     expect(page).to have_content("winning")
   end
 
-  xscenario "visitor can't add a question" do
+  # Kevin Sunday Edit
+  scenario "visitor can't add a question" do
+    visit '/'
+    expect(page).to_not have_content("Ask A Question")
+  end
+
+  # Kevin Sunday Edit
+  scenario "can see all current questions", js: true do
+    visit '/'
+    click_link("Show All Current Questions")
+    expect(find('.nav-tabs')).to have_css("li#show-all.active")
   end
 end
 
-feature 'User visits website ' do
+feature 'Logged in user visits website ' do
   given(:user)  {User.create!(username: "Bob Rajput", email: Faker::Internet.email, password: "123")}
 
   scenario "can login" do
