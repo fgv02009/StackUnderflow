@@ -8,6 +8,7 @@
 require 'faker'
 
 User.create!(username:"matthewwho", email:"matthewwho@me.com", password:"123")
+User.create!(username:"kevin", email:"kevin@mail.com", password:"password")
 
 10.times do
   User.create!(username: Faker::Name.name, email: Faker::Internet.email, password: "password")
@@ -16,7 +17,7 @@ end
 users = User.all
 
 15.times do
-  Question.create!(title: Faker::Company.catch_phrase, content: Faker::Lorem.paragraph(2), user: users.sample)
+  Question.create!(title: Faker::Company.catch_phrase, content: Faker::Lorem.paragraph(10), user: users.sample)
 end
 
 questions = Question.all
