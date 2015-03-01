@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
     render "index"
   end
 
-  # Showing all the questions in the database
+  # Showing all the questions in the database (Kevin Sunday Edit)
   def show_all_questions
     @questions = Question.order(created_at: :desc)
   end
