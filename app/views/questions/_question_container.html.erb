@@ -1,4 +1,4 @@
-<% if current_user%>
+<% if current_user %>
   <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-lg btn-success", id: "ask-question-btn" %>
   <!-- This seems to be done in a very complicated and unnecessary way -->
   <%=link_to "Discard Question", discard_form_path, remote: true, class: "btn btn-lg btn-danger", id: "discard-question-btn" %> 

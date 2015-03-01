@@ -2,4 +2,27 @@
   <h1>User: <%= @user.username.titleize %></h1>
   <p>Number of Questions Posted: <%= @user.questions.count %></p>
   <p>Number of Questions Answered: <%= @user.answers.count %></p>
+  <p>Number of Likes Given: <%= @user.votes.count %></p>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Questions Asked:</h3>
+  </div>
+    <% @user.questions.each do |question| %>
+      <div class="panel-body">
+          <%= link_to "#{question.title}", question_path(question) %>
+      </div>
+    <% end %>
+</div>
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Answered Questions:</h3>
+  </div>
+    <% @user.answers.each do |answer| %>
+      <div class="panel-body">
+          <%= link_to "#{answer.question.title}", question_path(answer.question) %>
+      </div>
+    <% end %>
 </div>
