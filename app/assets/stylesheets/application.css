@@ -26,6 +26,20 @@ body {
   margin: 0 80%;
 }
 
+#discard-question-btn {
+  display: none;
+  position: absolute;
+  top: 2px;
+  margin-left: 51%;
+}
+
+#show-question-btn {
+  display: none;
+  position: absolute;
+  top: 2px;
+  margin-left: 39%;
+}
+
 .signup {
   text-align: center;
   margin: 0 32%;
@@ -45,7 +59,7 @@ textarea {
 }
 
 #ask-question-btn {
-  position: fixed;
+  position: absolute;
   top: 2px;
   margin-left: 46%;
 }
