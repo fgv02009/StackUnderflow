@@ -17,6 +17,7 @@
 body {
   margin: 0;
 }
+
 .login {
   text-align: center;
   margin: 0 37%;
@@ -67,6 +68,8 @@ textarea {
 #ask-question-container {
   position: absolute;
   width: 100%;
+  /* Kevin Sunday Edit: This z-index needs to be here in order to the question form to overlay the tabs*/
+  z-index: 100; 
 }
 
 #question-form {
@@ -92,3 +95,4 @@ textarea {
   margin-bottom: 0px;
   text-align: right;
 }
+

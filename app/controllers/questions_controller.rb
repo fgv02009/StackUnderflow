@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
       render 'new' unless @question.save
 
     elsif preview?
-      @content = markdown(params[:question][:content]).gsub("\n","<br>")
+      @content = markdown(params[:question][:content]).gsub("\n","<p></p>")
       render :preview
     end
   end
