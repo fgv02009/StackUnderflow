@@ -52,6 +52,11 @@ class QuestionsController < ApplicationController
     render "index"
   end
 
+  # Showing all the questions in the database
+  def show_all_questions
+    @questions = Question.order(created_at: :desc)
+  end
+
   private
   def question_params
     #get attributed from db

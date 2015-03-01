@@ -1,0 +1,5 @@
+$(".nav-tabs li").removeClass("active"); 
+$(".questions").remove();
+$("#show-all").addClass("active");
+$("h1").html("All Current Questions");
+$("h1").after("<%= j (render 'questions_table') %>");
