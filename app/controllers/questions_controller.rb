@@ -52,18 +52,18 @@ class QuestionsController < ApplicationController
     render "index"
   end
 
+  private
+  def question_params
+    #get attributed from db
+    params.require(:question).permit(:content, :title)
+  end
+
   def submit_new_question?
     params[:commit] == "Submit New Question"
   end
 
   def preview?
     params[:commit] == "Preview"
-  end
-
-  private
-  def question_params
-    #get attributed from db
-    params.require(:question).permit(:content, :title)
   end
 
 end

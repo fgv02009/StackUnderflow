@@ -1,5 +1,8 @@
 $('#question-form').html("<%= j (render 'form') %>");
 $('#question-form').slideDown(350);
+$('#ask-question-btn').toggle();
+$('#discard-question-btn').toggle();
+$('#show-question-btn').toggle();
 
 $(document).mousedown(function (e)
 {
