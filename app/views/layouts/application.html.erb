@@ -37,7 +37,9 @@
   </div>
 </nav>
   
+<% if current_user && current_page?(controller: 'questions', action: 'index') %>
   <%= render "questions/question_container" %>
+<% end %>
 
 
 <%= yield %>
