@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
       render 'new' unless @question.save
 
     elsif preview?
-      @content = markdown(params[:question][:content]).gsub("\n","<br>")
+      @content = markdown(params[:question][:content]).gsub("\n","<p></p>")
       render :preview
     end
   end
@@ -52,18 +52,23 @@ class QuestionsController < ApplicationController
     render "index"
   end
 
-  def submit_new_question?
-    params[:commit] == "Submit New Question"
-  end
-
-  def preview?
-    params[:commit] == "Preview"
+  # Showing all the questions in the database (Kevin Sunday Edit)
+  def show_all_questions
+    @questions = Question.order(created_at: :desc)
   end
 
   private
   def question_params
     #get attributed from db
     params.require(:question).permit(:content, :title)
+  end
+
+  def submit_new_question?
+    params[:commit] == "Submit New Question"
+  end
+
+  def preview?
+    params[:commit] == "Preview"
   end
 
 end

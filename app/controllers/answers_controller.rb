@@ -14,7 +14,7 @@ class AnswersController < ApplicationController
   end
 
   def create
-    puts "Params IN ANSWER: #{params}"
+    # puts "Params IN ANSWER: #{params}"
     @answer = Answer.new(answer_params)
     @answer.user = current_user
     # @answer.question = Question.find(params[:question_id])

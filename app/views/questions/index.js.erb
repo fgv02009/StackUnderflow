@@ -1,0 +1,6 @@
+// Kevin Sunday Edit
+$(".nav-tabs li").removeClass("active");
+$(".questions").remove();
+$("#show-10").addClass("active");
+$("h1").html("10 Most Recent Questions");
+$("h1").after("<%= j (render 'questions_table') %>");

@@ -9,7 +9,7 @@ class VotesController < ApplicationController
     @question = Question.find(params[:question_id])
     @vote = Vote.new(user: current_user, voteable: @question)
     if @vote.save
-      p @question.votes.count
+      # p @question.votes.count
       render 'question_upvotes', locals: {question: @question}
     else
       redirect_to '/'

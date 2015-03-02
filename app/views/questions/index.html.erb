@@ -1,4 +1,10 @@
 <div class = "container" style = "margin-bottom: 30px">
+  <!-- Kevin Sunday Edit -->
+  <ul class="nav nav-tabs">
+    <li class="active" id="show-10"><%= link_to " Show 10 Most Recent Questions", index_path, remote: true %></li>
+    <li id="show-all"><%= link_to "Show All Current Questions", show_all_questions_path, remote: true %></li>
+  </ul>
+
   <h1 style = "text-align: center">10 Most Recent Questions</h1>
 
   <%=render "questions_table", locals: {questions: @questions}%>
