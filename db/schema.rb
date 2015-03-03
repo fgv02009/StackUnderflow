@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227164855) do
+ActiveRecord::Schema.define(version: 20150303003350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20150227164855) do
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
+  create_table "ice_creams", force: true do |t|
+    t.string   "flavor"
+    t.string   "topping"
+    t.string   "consumer"
+    t.string   "country"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "questions", force: true do |t|
     t.string   "title"
     t.text     "content"
@@ -41,6 +50,7 @@ ActiveRecord::Schema.define(version: 20150227164855) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
+    t.integer  "voted_q"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

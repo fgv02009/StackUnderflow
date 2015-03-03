@@ -1,13 +1,36 @@
-<div class = "container" style = "margin-bottom: 30px">
-  <!-- Kevin Sunday Edit -->
-  <ul class="nav nav-tabs">
-    <li class="active" id="show-10"><%= link_to " Show 10 Most Recent Questions", index_path, remote: true %></li>
-    <li id="show-all"><%= link_to "Show All Current Questions", show_all_questions_path, remote: true %></li>
-  </ul>
-
-  <h1 style = "text-align: center">10 Most Recent Questions</h1>
-
-  <%=render "questions_table", locals: {questions: @questions}%>
-
-  <br>
+<div class="row">
+  <div class="col-xs-6">
+    <h3>Ice Cream Flavors</h3>
+    <%=  pie_chart IceCream.group(:flavor).count %>
+    <br>
+     <%= bar_chart IceCream.group(:topping).count %>
+     <br>
+     <br><br>
+     <%= geo_chart IceCream.group(:country).count %>
+     <br>
+     <br>
+     <br>
+  </div>
 </div>
+
+<div class="ice">
+ <h1>Gee Whiz!</h1>
+ <h3> Gem Chartkick allows you to easily generate interactive charts. <br><br>
+  To do so:</h3>
+
+  1) Add gem 'chartkick' to your Gemfile
+  <br>
+  2) Run bundle install
+  <br>
+  3) Add '//= require chartkick' in your assets/js/app file<br>
+  4) Include 'javascript_include_tag "//www.google.com/jsapi", "chartkick" ' in your layout.html <br>
+<br>
+  pie_chart IceCream.group(:flavor).count<br>
+  bar_chart IceCream.group(:topping).count<br>
+  geo_chart IceCream.group(:country).count <br><br>
+  Links for reference: <br>
+  http://chartkick.com/ <br>
+  http://dev-misadventures.ghost.io/a-tale-of-chart-generation-and-chartkick/ <br>
+  https://github.com/ankane/chartkick <br>
+</div>
+

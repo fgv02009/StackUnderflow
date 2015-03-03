@@ -15,7 +15,14 @@
  *= require bootstrap.min
  */
 body {
-  margin: 0;
+  margin-left: 20px;
+}
+
+.ice {
+  font-size: 16px;
+  margin-left: 200px;
+  margin-bottom: 60px;
+
 }
 
 .login {
@@ -45,7 +52,7 @@ body {
   text-align: center;
   margin: 0 32%;
 }
- 
+
 #preview-container{
   display: none;
 }
@@ -69,7 +76,7 @@ textarea {
   position: absolute;
   width: 100%;
   /* Kevin Sunday Edit: This z-index needs to be here in order to the question form to overlay the tabs*/
-  z-index: 100; 
+  z-index: 100;
 }
 
 #question-form {

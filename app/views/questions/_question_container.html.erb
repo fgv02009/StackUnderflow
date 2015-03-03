@@ -1,11 +1,11 @@
 <% if current_user %>
   <%=link_to "Ask a Question", new_question_path, remote: true, class: "btn btn-lg btn-success", id: "ask-question-btn" %>
   <!-- This seems to be done in a very complicated and unnecessary way -->
-  <%=link_to "Discard Question", discard_form_path, remote: true, class: "btn btn-lg btn-danger", id: "discard-question-btn" %> 
+  <%=link_to "Discard Question", discard_form_path, remote: true, class: "btn btn-lg btn-danger", id: "discard-question-btn" %>
   <!-- This also seems to be done in a very complicated and unnecessary way -->
-  <%=link_to "Show Form", show_form_path, remote: true, class: "btn btn-lg btn-primary", id: "show-question-btn" %> 
+  <%=link_to "Show Form", show_form_path, remote: true, class: "btn btn-lg btn-primary", id: "show-question-btn" %>
 <% else %>
-  <%=link_to "Join Our Cult", signup_path, class: "btn btn-lg btn-info", id: "ask-question-btn" %>
+  <%=link_to "Scoop It", signup_path, class: "btn btn-lg btn-info", id: "ask-question-btn" %>
 <% end %>
 
 <div id="ask-question-container">
