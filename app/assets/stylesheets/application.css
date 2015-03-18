@@ -45,7 +45,7 @@ body {
   text-align: center;
   margin: 0 32%;
 }
- 
+
 #preview-container{
   display: none;
 }
@@ -69,7 +69,7 @@ textarea {
   position: absolute;
   width: 100%;
   /* Kevin Sunday Edit: This z-index needs to be here in order to the question form to overlay the tabs*/
-  z-index: 100; 
+  z-index: 100;
 }
 
 #question-form {
@@ -94,5 +94,13 @@ textarea {
   position: absolute;
   margin-bottom: 0px;
   text-align: right;
+}
+
+.answerbutton {
+  margin-bottom: 20px;
+}
+
+.submit_new_answer {
+  margin-bottom: 20px;
 }
 
